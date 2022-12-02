@@ -1,0 +1,66 @@
+
+buildscript {
+    repositories {
+        mavenCentral()
+        maven { url 'https://files.minecraftforge.net/maven' }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.1-SNAPSHOT'
+    }
+}
+
+apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'java'
+apply plugin: 'application'
+
+group 'org.lpc'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+minecraft {
+    version = '1.8.9-11.15.1.1722'
+
+    runDir = 'run'
+
+    mappings = 'stable_22'
+
+    makeObfSourceJar = false
+}
+
+dependencies {
+    compile 'com.theokanning.openai-gpt3-java:client:0.8.0'
+    compile 'com.theokanning.openai-gpt3-java:api:0.8.0'
+}
+
+
+processResources {
+
+    inputs.property 'version', project.version
+
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version': project.version
+    }
+
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+
+    rename '(.+_at.cfg)', 'META-INF/$1'
+}
+
+jar {
+    manifest.attributes(
+            'FMLCorePluginContainsFMLMod': true,
+            'ForceLoadAsMod': false
+    )
+}
+
+sourceCompatibility = targetCompatibility = '1.8'
+
+compileJava {
+    sourceCompatibility = targetCompatibility = '1.8'
+}

@@ -1,0 +1,16 @@
+[
+{
+  "modid": "lmod",
+  "name": "lmod",
+  "description": "mod",
+  "version": "1.0",
+  "mcversion": "1.8.9",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["liam(pc)#7740"],
+  "credits": "Gromit",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
