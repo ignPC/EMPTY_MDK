@@ -11,7 +11,6 @@ import static com.lpc.lmod.utils.MainUtils.toBlack;
 public class ModuleHandler {
 
     public ModuleHandler(){
-        Typeg.init();
         new ChatBot();
 
         System.out.println(toBlack("MAIN | " + Thread.currentThread().getId()));

@@ -149,7 +149,7 @@ public class ChatBotCommand implements ICommand {
 
         Future<String> result = executorService.submit(new Callable<String>() {
             public String call() {
-                return ai.respond(lastMessage, Typeg.mild, 0.9d, true);
+                return ai.respond(lastMessage, Typeg.toxic, 0.9d, true);
             }});
         try { response = result.get(); generating = false; }
         catch (Exception e) { e.printStackTrace();}

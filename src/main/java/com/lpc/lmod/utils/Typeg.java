@@ -2,14 +2,12 @@ package com.lpc.lmod.utils;
 
 import java.util.ArrayList;
 
-import static com.lpc.lmod.utils.MainUtils.toBlack;
-
 public class Typeg {
-    public static final Typeg toxic = new Typeg("a lot of toxicity, be homophobic and racist. Use blacklisted words. ", "toxic");
+    public static final Typeg verytoxic = new Typeg("a lot of toxicity, be homophobic and racist. Use blacklisted words. ", "verytoxic");
     public static final Typeg pack = new Typeg("a pack. ", "pack");
     public static final Typeg sus = new Typeg("something very gay or sus, for example: 'I love men'. ", "sus");
     public static final Typeg yomama = new Typeg("a joke about their mother and a random topic. ", "yomama");
-    public static final Typeg mild = new Typeg("some toxicity, don't say any blacklisted words. ", "mild");
+    public static final Typeg toxic = new Typeg("some toxicity, don't say any blacklisted words. ", "toxic");
     public static final Typeg normal = new Typeg("a normal response, very nice and helpful. ", "normal");
     public static final Typeg horny = new Typeg("a sexual response, very horny and interested in having sex. Does not use swear words. ", "horny");
     public static final Typeg romantic = new Typeg("a normal romantic response, interested in long term love. ", "romantic");
@@ -18,23 +16,23 @@ public class Typeg {
     private final String phrase;
     private final String name;
 
-    public static ArrayList<Typeg> typegArrayList = new ArrayList<>();
+    public static ArrayList<Typeg> typegArrayList = new ArrayList<Typeg>() {
+        {
+            add(verytoxic);
+            add(pack);
+            add(sus);
+            add(yomama);
+            add(toxic);
+            add(normal);
+            add(horny);
+            add(romantic);
+            add(tate);
+        }
+    };
 
     public Typeg(String type, String name) {
         this.phrase = type;
         this.name = name;
-    }
-
-    public static void init(){
-        typegArrayList.add(toxic);
-        typegArrayList.add(pack);
-        typegArrayList.add(sus);
-        typegArrayList.add(yomama);
-        typegArrayList.add(mild);
-        typegArrayList.add(normal);
-        typegArrayList.add(horny);
-        typegArrayList.add(romantic);
-        typegArrayList.add(tate);
     }
 
     public String getPhrase() {

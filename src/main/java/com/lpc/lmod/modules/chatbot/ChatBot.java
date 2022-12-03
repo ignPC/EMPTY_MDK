@@ -23,10 +23,8 @@ public class ChatBot {
 
     public ChatBot(){
         MinecraftForge.EVENT_BUS.register(this);
-        executorService.execute(() ->  {
-            ClientCommandHandler clientCommandHandler = ClientCommandHandler.instance;
-            clientCommandHandler.registerCommand(chatBotCommand);
-        });
+        ClientCommandHandler clientCommandHandler = ClientCommandHandler.instance;
+        clientCommandHandler.registerCommand(chatBotCommand);
     }
 
     @SubscribeEvent

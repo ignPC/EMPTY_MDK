@@ -30,7 +30,7 @@ public class Generator{
         while (true) {
             String prompt = "respond to the message below with " + type.getPhrase() +
                     "Make sure NOT TO REPEAT the previous message, DO NOT USE ANY INVISIBLE CHARACTERS, DO NOT USE THE SAME INSULT! " +
-                    "Make the response maximum 4 sentences long. " +
+                    "Make the response maximum 3 sentences long. " +
                     "\n\nMESSAGE: \n\n" +
                     phrase +
                     "\n\nRESPONSE: ";

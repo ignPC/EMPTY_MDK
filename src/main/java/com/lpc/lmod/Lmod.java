@@ -12,14 +12,11 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 @Mod(modid = "L-Mod", version = "1.0", acceptedMinecraftVersions = "[1.8.9]")
 public class Lmod {
 
-    private static Lmod instance;
     private final Minecraft minecraft = Minecraft.getMinecraft();
 
     @Mod.EventHandler
     public void onPostInit(FMLPostInitializationEvent event) {
         MinecraftForge.EVENT_BUS.register(this);
-        instance = this;
-
         new ModuleHandler();
     }
 }
